@@ -1,0 +1,136 @@
+:root {
+  --hex-color-default: #000000;
+  --hex-color-hover: #FFFFFF;
+  --hex-width: 100px;
+  --hex-height: 100px;
+  --hex-text-bg: #3498db; /* Hex color for text background */
+}
+
+.hexagon-container {
+  position: relative;
+  width: calc(10 * var(--hex-width));
+  height: 500px; /* Adjust the container height as needed */
+  margin: 20vh auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hexagon {
+  cursor: pointer;
+  position: absolute;
+  width: var(--hex-width);
+  height: var(--hex-height);
+  margin-left: 10px;
+  display: inline-block;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+  transform: rotate(90deg);
+} 
+/* position: absolute;
+  cursor: pointer;
+  transition: fill 0.2s ease;*/
+
+
+.hexagon-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hexagon polygon {
+  fill: var(--hex-color-default);
+}
+.hexagon-text {
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  background-color: var(--hex-text-bg);
+  transform-origin: center bottom;
+  display: inline-block;
+  transform: rotate(-90deg);
+  margin-top: 33px;
+  margin-left: 21px;
+}
+/*.hexagon-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  background-color: var(--hex-text-bg);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  transform-origin: center bottom;
+  transform: scaleY(0);
+    /*transform: rotate(90deg);
+}*/
+
+.hexagon:hover .hexagon-svg polygon {
+  fill: var(--hex-color-hover);
+}
+
+.hexagon:hover .hexagon-text {
+  opacity: 1;
+  animation: showHexText 0.3s forwards;
+}
+
+@keyframes showHexText {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Adjust vertical positions */
+.hexagon:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.hexagon:nth-child(2) {
+  top: 51px;
+  left: 83px;
+}
+.hexagon:nth-child(3) {
+  top: 3px;
+  left: 167px;
+}
+.hexagon:nth-child(4) {
+  top: 108px;
+  left: 165px;
+}
+.hexagon:nth-child(5) {
+  top: 56px;
+  left: 248px;
+}
+.hexagon:nth-child(6) {
+  top: 161px;
+  left: 249px;
+}
+.hexagon:nth-child(7) {
+  top: 105px;
+  left: 331px;
+}
+.hexagon:nth-child(8) {
+  top: 0px;
+  left: 328px;
+}
+.hexagon:nth-child(9) {
+  top: 52px;
+  left: 411px;
+}
+.hexagon:nth-child(10) {
+  top: 0px;
+  left: 492px;
+}
